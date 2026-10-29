@@ -1,7 +1,10 @@
 import axios from 'axios';
 
+// Automatically use relative '/api' in production (Vercel), and localhost for local dev
+const baseURL = import.meta.env.PROD ? '/api' : 'http://localhost:8000/api';
+
 const api = axios.create({
-  baseURL: 'http://localhost:8000/api',
+  baseURL: baseURL,
 });
 
 export const getHealth = async () => {
