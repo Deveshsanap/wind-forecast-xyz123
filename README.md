@@ -1,6 +1,6 @@
 # Wind Forecast Accuracy Dashboard
 
-**Live Application:**https://wind-forecast-xyz123.vercel.app/
+Live Application: [https://wind-forecast-xyz123.vercel.app/](url)
 
 ## Overview
 This full-stack application helps energy utility procurement teams evaluate day-ahead wholesale market purchasing decisions. By comparing actual wind generation against the specific day-ahead forecasts available at the time of procurement, the dashboard allows the team to quantitatively assess forecast accuracy and minimize risk.
