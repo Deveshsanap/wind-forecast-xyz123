@@ -1,7 +1,12 @@
+import sys
+import os
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 
-# Import our existing logic from the backend folder
+# Force Python to recognize the root directory so it can find the 'backend' folder
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+# Now these imports will work in the cloud
 from backend.app.elexon_client import ElexonClient
 from backend.app.processing import process_forecast_accuracy
 from backend.app.config import settings
