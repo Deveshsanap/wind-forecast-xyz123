@@ -4,9 +4,10 @@ import traceback
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 
-# Force path resolution to the absolute root
+# Force path resolution to include the backend folder
 root_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, root_dir)
+sys.path.insert(0, os.path.join(root_dir, "backend")) # <-- This fixes the import error
 
 app = FastAPI(title="Wind Forecast Dashboard API")
 
@@ -18,7 +19,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Attempt to load the backend modules and trap the exact error if it fails
 try:
     from backend.app.elexon_client import ElexonClient
     from backend.app.processing import process_forecast_accuracy
