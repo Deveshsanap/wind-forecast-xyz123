@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    environment:
+      - ELEXON_API_BASE_URL=https://data.elexon.co.uk/bmrs/api/v1
+      - DECISION_CUTOFF_TIME=11:00

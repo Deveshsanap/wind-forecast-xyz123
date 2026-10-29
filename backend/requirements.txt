@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+httpx
+pandas
+numpy
+python-dotenv
+pydantic
+pydantic-settings
